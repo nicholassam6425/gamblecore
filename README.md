@@ -1,2 +1,12 @@
 # gamblecore
  balatro mod that plays a funny clip when wheel of fortune fails
+
+# install
+
+your file structure should look like this:
+
+`Balatro/mods/gamblecore/main.lua`
+
+and ***NOT*** like this:
+
+`Balatro/mods/gamblecore/gamblecore/main.lua`
