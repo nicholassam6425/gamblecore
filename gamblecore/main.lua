@@ -10,9 +10,8 @@ function attention_text(args)
     if args.text == localize('k_nope_ex') and args.major.config.center_key == "c_wheel_of_fortune" then
         SOURCES.gamblecore.sound:setVolume((G.SETTINGS.SOUND.volume/100.0) * (G.SETTINGS.SOUND.game_sounds_volume/100.0))
         SOURCES.gamblecore.sound:play()
-    else
-    ui_attention_text(args)
     end
+    ui_attention_text(args)
 end
 local function on_enable()
     for _, filename in ipairs(love.filesystem.getDirectoryItems("/mods/gamblecore/assets/sounds/")) do
