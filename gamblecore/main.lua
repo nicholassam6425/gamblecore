@@ -13,6 +13,14 @@ function attention_text(args)
     end
     ui_attention_text(args)
 end
+local game_poll_edition = poll_edition
+function poll_edition(_key, _mod, _no_neg, _guaranteed)
+    if _key == 'wheel_of_fortune' and _no_neg and _guaranteed then
+        SOURCES.gamblecore2.sound:setVolume((G.SETTINGS.SOUND.volume/100.0) * (G.SETTINGS.SOUND.game_sounds_volume/100.0))
+        SOURCES.gamblecore2.sound:play()
+    end
+    return game_poll_edition(_key, _mod, _no_neg, _guaranteed)
+end
 local function on_enable()
     for _, filename in ipairs(love.filesystem.getDirectoryItems("/mods/gamblecore/assets/sounds/")) do
         local ext = string.sub(filename, -4)
